@@ -2,6 +2,12 @@
 
 A Flask-based web application for managing corporate training programs. The system allows users to upload student data via CSV, organize learners into cohorts, and automatically assign them into course sections. It also provides section summary reports to support program administration.
 
+## Example CSV Format
+
+first_name,last_name,email,employee_id
+John,Doe,john@example.com,EMP001
+Jane,Smith,jane@example.com,EMP002
+
 ## Features
 - Upload student data via CSV
 - Automatically assign students to course sections
