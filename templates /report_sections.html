@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Section Summary Report{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h2>Section Summary Report</h2>
+    <p>Section number and student count per section.</p>
+</div>
+
+<div class="card">
+    {% if report %}
+        {% for course_name, sections in report.items() %}
+            <h3 style="color: #2c3e50; margin-bottom: 1rem;">{{ course_name }}</h3>
+            <div class="table-container" style="margin-bottom: 1.5rem;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Section Number</th>
+                            <th>Student Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for section in sections %}
+                        <tr>
+                            <td>{{ section.section_number }}</td>
+                            <td>{{ section.num_students }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-muted">No section data found for the selected cohort.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!-- create_program.html -->
+{% extends 'base.html' %}
+{% block title %}Create Program{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h2>Create New Program</h2>
+    <p>Fill out the details below to associate a new training program with a registered company.</p>
+</div>
+<div class="card">
+<form>
+    <div class="row">
+        <div class="col-2">
+            <label for="companySelect" class="form-label">Select Company</label>
+            <select class="form-select" id="companySelect">
+                <option selected disabled>-- Select Company --</option>
+                <option value="1">GlobalTech Inc.</option>
+                <option value="2">FutureEdge Ltd.</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <label for="programTitle" class="form-label">Program Title</label>
+            <input type="text" class="form-input" id="programTitle" placeholder="e.g., Data Leadership Bootcamp">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <label for="startDate" class="form-label">Start Date</label>
+            <input type="date" class="form-input" id="startDate">
+        </div>
+        <div class="col-2">
+            <label for="endDate" class="form-label">End Date</label>
+            <input type="date" class="form-input" id="endDate">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contractUpload" class="form-label">Upload Program Contract (PDF)</label>
+        <input type="file" class="form-input" id="contractUpload" accept="application/pdf">
+    </div>
+    <button type="submit" class="btn btn-primary">Create Program</button>
+</form>
+</div>
+{% endblock %}

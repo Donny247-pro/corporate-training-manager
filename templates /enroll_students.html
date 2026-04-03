@@ -1,0 +1,67 @@
+<!-- enroll_students.html -->
+{% extends 'base.html' %}
+{% block title %}Enroll Students{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h2>Enroll Students</h2>
+    <p>Upload a CSV or paste student data to assign students to a cohort and divide them into course
+        sections (max 35 per section).</p>
+</div>
+<div class="card">
+<form>
+    <div class="row">
+        <div class="col-2">
+            <label for="programSelect" class="form-label">Select Program</label>
+            <select class="form-select" id="programSelect">
+                <option selected disabled>-- Select Program --</option>
+                <option value="1">Data Leadership Bootcamp</option>
+                <option value="2">Intro to AI in Business</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <label for="cohortSelect" class="form-label">Select Cohort</label>
+            <select class="form-select" id="cohortSelect">
+                <option selected disabled>-- Select Cohort --</option>
+                <option value="1">Cohort Alpha</option>
+                <option value="2">Cohort Beta</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="csvUpload" class="form-label">Upload Student CSV</label>
+        <input type="file" class="form-input" id="csvUpload" accept=".csv">
+        <small class="text-muted">CSV format: first_name,last_name,email,employee_id</small>
+    </div>
+    <div class="form-group">
+        <label for="csvPaste" class="form-label">Or Paste CSV Content</label>
+        <textarea class="form-textarea" id="csvPaste" rows="5" placeholder="e.g.:
+John,Doe,john@example.com,EMP001
+Jane,Smith,jane@example.com,EMP002"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enroll Students</button>
+</form>
+</div>
+<hr style="margin: 2rem 0; border: none; border-top: 1px solid #e9ecef;">
+<h4>Section Assignment Preview</h4>
+<p>Students will be assigned evenly across sections (max 35 per section).</p>
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Section Number</th>
+                <th>Student Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Section 1</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td>Section 2</td>
+                <td>28</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

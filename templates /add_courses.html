@@ -1,0 +1,151 @@
+<!-- add_courses.html -->
+{% extends 'base.html' %}
+{% block title %}Add Courses{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h2>📚 Add Courses to Program</h2>
+    <p>Enter the list of course titles for a selected program. These courses will be used for cohort instruction and
+        student assignments.</p>
+</div>
+
+<div class="row">
+    <div class="col-2">
+        <div class="card">
+            <h3 style="color: #3498db; margin-bottom: 1.5rem;">Course Information</h3>
+            <form method="POST">
+                <div class="form-group">
+                    <label class="form-label">📋 Select Program</label>
+                    <select class="form-select" name="program_id" required>
+                        <option value="">-- Select Program --</option>
+                        <option value="1">Data Leadership Bootcamp - GlobalTech Inc.</option>
+                        <option value="2">AI in Business - FutureEdge Ltd.</option>
+                        <option value="3">Digital Transformation - TechCorp Solutions</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🏷️ Cohort Name (Optional)</label>
+                    <input type="text" class="form-input" name="cohort_name"
+                        placeholder="e.g., Fall 2024, Cohort Alpha">
+                    <small class="text-muted">Optional identifier for this course group</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">📝 Course Titles (one per line)</label>
+                    <textarea class="form-textarea" name="course_list" rows="8" placeholder="Enter course names, one per line:
+
+Introduction to Data Science
+Business Analytics Fundamentals
+Machine Learning for Leaders
+Data Visualization
+Strategic Decision Making
+Ethics in AI" required></textarea>
+                    <small class="text-muted">Each line will create a separate course</small>
+                </div>
+
+                <button type="submit" class="btn btn-success" style="width: 100%;">
+                    ✅ Add Courses
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-2">
+        <div class="card" style="background: rgba(52, 152, 219, 0.05);">
+            <h3 style="color: #2980b9; margin-bottom: 1.5rem;">💡 How It Works</h3>
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop"
+                alt="Course Planning"
+                style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+
+            <div style="background: white; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
+                <h4 style="color: #2c3e50; margin-bottom: 1rem;">📋 Step-by-Step:</h4>
+                <ol style="margin-left: 1rem; color: #555;">
+                    <li><strong>Select Program:</strong> Choose the target program</li>
+                    <li><strong>Add Cohort ID:</strong> Optional group identifier</li>
+                    <li><strong>List Courses:</strong> One course name per line</li>
+                    <li><strong>Submit:</strong> Courses are created and ready for enrollment</li>
+                </ol>
+            </div>
+
+            <div class="alert alert-info">
+                <h4 style="color: #2980b9;">📌 Important Notes:</h4>
+                <ul style="margin-left: 1rem;">
+                    <li>Each line creates one course</li>
+                    <li>Course names should be descriptive</li>
+                    <li>Courses will be available for student enrollment</li>
+                    <li>Maximum 35 students per section</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" style="background: rgba(39, 174, 96, 0.05);">
+            <h3 style="color: #27ae60; margin-bottom: 1rem;">📄 Sample Course List</h3>
+            <div
+                style="background: white; padding: 1rem; border-radius: 10px; font-family: monospace; border-left: 4px solid #27ae60;">
+                Introduction to Technology<br>
+                Business Analytics<br>
+                Leadership & Teamwork<br>
+                Project Management<br>
+                Digital Marketing<br>
+                Financial Analysis
+            </div>
+            <p style="margin-top: 1rem; color: #555;">Copy and paste this example to get started quickly!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Preview Section -->
+<div class="card" style="margin-top: 2rem;">
+    <h3 style="color: #2c3e50; margin-bottom: 1rem;">👀 What Happens Next?</h3>
+    <div class="row">
+        <div class="col-3">
+            <div style="text-align: center; padding: 1rem;">
+                <div class="feature-icon icon-primary" style="font-size: 2rem;">📚</div>
+                <h4 style="color: #3498db;">Courses Created</h4>
+                <p>Individual course records are created in the system</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div style="text-align: center; padding: 1rem;">
+                <div class="feature-icon icon-success" style="font-size: 2rem;">👥</div>
+                <h4 style="color: #27ae60;">Ready for Students</h4>
+                <p>Courses are available for student enrollment</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div style="text-align: center; padding: 1rem;">
+                <div class="feature-icon icon-warning" style="font-size: 2rem;">📊</div>
+                <h4 style="color: #f39c12;">Auto Sections</h4>
+                <p>System creates sections when students are enrolled</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function previewCourses() {
+        const textarea = document.querySelector('textarea[name="course_list"]');
+        const courses = textarea.value.split('\n').filter(course => course.trim());
+
+        if (courses.length > 0) {
+            alert(`Preview: ${courses.length} courses will be created:\n\n${courses.join('\n')}`);
+        }
+    }
+
+    // Add preview button dynamically
+    document.addEventListener('DOMContentLoaded', function () {
+        const submitBtn = document.querySelector('button[type="submit"]');
+        const previewBtn = document.createElement('button');
+        previewBtn.type = 'button';
+        previewBtn.className = 'btn btn-info';
+        previewBtn.style.width = '100%';
+        previewBtn.style.marginBottom = '1rem';
+        previewBtn.innerHTML = '👁️ Preview Courses';
+        previewBtn.onclick = previewCourses;
+
+        submitBtn.parentNode.insertBefore(previewBtn, submitBtn);
+    });
+</script>
+{% endblock %}

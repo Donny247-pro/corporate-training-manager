@@ -1,0 +1,196 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+{% block title %}Home - Corporate Programs Portal{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h2>Corporate Programs Management System</h2>
+    <p>Streamline your corporate education programs with our comprehensive management platform</p>
+</div>
+
+<!-- Quick Stats -->
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="feature-icon icon-primary">🏢</div>
+        <div class="stat-number">12</div>
+        <p>Active Companies</p>
+    </div>
+    <div class="stat-card">
+        <div class="feature-icon icon-success">📚</div>
+        <div class="stat-number">28</div>
+        <p>Active Programs</p>
+    </div>
+    <div class="stat-card">
+        <div class="feature-icon icon-warning">👥</div>
+        <div class="stat-number">847</div>
+        <p>Enrolled Students</p>
+    </div>
+    <div class="stat-card">
+        <div class="feature-icon icon-info">📖</div>
+        <div class="stat-number">156</div>
+        <p>Course Sections</p>
+    </div>
+</div>
+
+<!-- Core Functions -->
+<div class="card">
+    <h3 style="margin-bottom: 2rem; color: #2c3e50;">🚀 Core Functions</h3>
+    <div class="row">
+        <div class="col-2">
+            <div style="text-align: center; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=300&h=200&fit=crop"
+                    alt="Add Courses"
+                    style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                <h4 style="color: #3498db; margin-bottom: 1rem;">Add Courses</h4>
+                <p style="margin-bottom: 1.5rem;">Upload course lists and create new course sections. Simply paste
+                    course names (one per line) to get started.</p>
+                <a href="/add_courses" class="btn btn-primary">Add Courses</a>
+            </div>
+        </div>
+        <div class="col-2">
+            <div style="text-align: center; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&h=200&fit=crop"
+                    alt="Enroll Students"
+                    style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                <h4 style="color: #27ae60; margin-bottom: 1rem;">Enroll Students</h4>
+                <p style="margin-bottom: 1.5rem;">Upload CSV files or paste student data to automatically enroll
+                    students. System handles section limits (35 max).</p>
+                <a href="/enroll_students" class="btn btn-success">Enroll Students</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reports Section -->
+<div class="card">
+    <h3 style="margin-bottom: 2rem; color: #2c3e50;">📊 Reports & Analytics</h3>
+    <div class="row">
+        <div class="col-2">
+            <div style="text-align: center; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop"
+                    alt="Section Summary"
+                    style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                <h4 style="color: #17a2b8; margin-bottom: 1rem;">Section Summary</h4>
+                <p style="margin-bottom: 1.5rem;">View course titles and student counts per section. Perfect for
+                    department chairs and coordinators.</p>
+                <a href="/section_summary_report" class="btn btn-info">View Summary</a>
+            </div>
+        </div>
+        <div class="col-2">
+            <div style="text-align: center; padding: 1rem;">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&h=200&fit=crop"
+                    alt="Student Roster"
+                    style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                <h4 style="color: #f39c12; margin-bottom: 1rem;">Student Roster</h4>
+                <p style="margin-bottom: 1.5rem;">Detailed student enrollment lists by course section. Export-ready for
+                    Canvas integration.</p>
+                <a href="/student_roster" class="btn btn-warning">View Roster</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Program Management -->
+<div class="card">
+    <h3 style="margin-bottom: 2rem; color: #2c3e50;">⚙️ Program Management</h3>
+    <div class="row">
+        <div class="col-3">
+            <div style="text-align: center; padding: 1rem;">
+                <div class="feature-icon icon-primary" style="font-size: 2rem;">🏢</div>
+                <h4 style="color: #3498db; margin-bottom: 1rem;">Manage Companies</h4>
+                <p style="margin-bottom: 1.5rem;">Register new client companies and maintain contact information.</p>
+                <a href="/add_company" class="btn btn-primary">Add Company</a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div style="text-align: center; padding: 1rem;">
+                <div class="feature-icon icon-success" style="font-size: 2rem;">🎯</div>
+                <h4 style="color: #27ae60; margin-bottom: 1rem;">Create Programs</h4>
+                <p style="margin-bottom: 1.5rem;">Set up new training programs and associate them with client companies.
+                </p>
+                <a href="/create_program" class="btn btn-success">Create Program</a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div style="text-align: center; padding: 1rem;">
+                <div class="feature-icon icon-info" style="font-size: 2rem;">⚡</div>
+                <h4 style="color: #17a2b8; margin-bottom: 1rem;">Quick Upload</h4>
+                <p style="margin-bottom: 1.5rem;">Fast-track student enrollment with CSV upload functionality.</p>
+                <a href="/enroll_students" class="btn btn-info">Quick Start</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Getting Started Guide -->
+<div class="card">
+    <h3 style="margin-bottom: 2rem; color: #2c3e50;">🚀 Quick Start Guide</h3>
+    <div class="row">
+        <div class="col-2">
+            <div class="alert alert-info">
+                <h4 style="color: #2980b9; margin-bottom: 1rem;">📋 Step-by-Step Process:</h4>
+                <ol style="margin-left: 1rem;">
+                    <li><strong>Add Courses:</strong> Prepare a text file with course names (one per line)</li>
+                    <li><strong>Prepare Student Data:</strong> Create CSV with: first_name, last_name, email,
+                        employee_id</li>
+                    <li><strong>Upload & Enroll:</strong> Use our enrollment system to automatically create sections
+                    </li>
+                    <li><strong>View Reports:</strong> Check section summaries and student rosters</li>
+                </ol>
+                <p style="margin-top: 1rem;"><strong>💡 Note:</strong> Sections are automatically limited to 35 students
+                    maximum.</p>
+            </div>
+        </div>
+        <div class="col-2">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop"
+                alt="Getting Started" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity -->
+<div class="card">
+    <h3 style="margin-bottom: 2rem; color: #2c3e50;">🕒 Recent Activity</h3>
+    <div class="table-container">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="feature-icon icon-success" style="width: 40px; height: 40px; font-size: 1rem;">
+                                👥</div>
+                            <div>
+                                <strong>63 students</strong> enrolled in Data Analytics Bootcamp
+                                <div class="text-muted">2 hours ago</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="feature-icon icon-primary" style="width: 40px; height: 40px; font-size: 1rem;">
+                                📚</div>
+                            <div>
+                                <strong>5 new courses</strong> added to AI Leadership Program
+                                <div class="text-muted">5 hours ago</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="feature-icon icon-info" style="width: 40px; height: 40px; font-size: 1rem;">🏢
+                            </div>
+                            <div>
+                                <strong>TechCorp Solutions</strong> registered as new client
+                                <div class="text-muted">1 day ago</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
